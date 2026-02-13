@@ -66,12 +66,12 @@ installation
     npm install
 3. Set up environment variables
     Create a .env file in the root directory and add:
-    DB_HOST=(your db host)
-    DB_USER=(your db user)
-    DB_PASSWORD=(your db password)
-    DB_DATABASE=todo_API
-    JWT_SECRET=(your jwt secret key)
-    JWT_REFRESH_TOKEN=(your jwt refresh secret key)
+    - DB_HOST=(your db host)
+    - DB_USER=(your db user)
+    - DB_PASSWORD=(your db password)
+    - DB_DATABASE=todo_API
+    - JWT_SECRET=(your jwt secret key)
+    - JWT_REFRESH_TOKEN=(your jwt refresh secret key)
 
 4. Start the server:
     npm start
@@ -84,54 +84,54 @@ This section documents the main API endpoints, including required parameters, re
 You can interact with the API using tools such as Postman.
 
 ### User Registration 
-Register a new user 
+Register a new user  
 Endpoint: POST /api/register
 
-Request body:
+Request body:  
 {
     "name" : "newUser",
     "email": "newUser@email.com",
     "password":"userPassword"
 }
 
-Response:
+Response:  
 {
     "message": "register successfully",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibmV3VXNlciIsImVtYWlsIjoibmV3VXNlckBlbWFpbC5jb20iLCJpYXQiOjE3NzA5NjE2NDMsImV4cCI6MTc3MDk2MTgyM30.YzQuVbMAyi3YaUbuGdRRadqgkuu9dF5tpkP_aakpgq8"
 }
 
 ### User Login 
-Authenticate a user 
+Authenticate a user  
 Endpoint: POST /api/login
 
-Request body:
+Request body:  
 {
     "email": "newUser@email.com",
     "password":"userPassword"
 }
 
-Response :
+Response :  
 {
     "message": "login sucessfully",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5ld1VzZXJAZW1haWwuY29tIiwiaWF0IjoxNzcwOTYyMjcwLCJleHAiOjE3NzA5NjI0NTB9.S6dhIM3-QbH-ck7udj8H2wUvnv6HQyFK2wxtxTODKO8"
 }
 
 ### Create Todo List 
-Create a new todo item 
+Create a new todo item   
 Endpoint: POST /api/todos
 
-Headers:
+Headers:  
 {
   "Authorization": "Bearer your-jwt-token"
 }
 
-Request body:
+Request body:  
 {
   "title": "Buy electronics",
   "description": "Buy dish washer and oven "
 }
 
-Response :
+Response :  
 [
     {
         "id": 37,
@@ -140,53 +140,53 @@ Response :
     }
 ]
 
-### Update Todo List 
-Update an existing todo item
+### Update Todo List   
+Update an existing todo item  
 Endpoint: PUT /api/todos/:id
 
 
-Headers:
+Headers:  
 {
   "Authorization": "Bearer your-jwt-token"
 }
 
-Request body:
+Request body:  
 {
   "title": "Buy groceries",
   "description": "Buy sugar, milk, eggs, bread, and cheese"
 }
 
-Response :
+Response :  
 {
     "id": 20,
     "title": "Buy groceries",
     "description": "Buy sugar, milk, eggs, bread, and cheese"
 }
 
-### Delete Todo List
-Delete a todo item
+### Delete Todo List  
+Delete a todo item  
 Endpoint : DELETE /api/todos/:id
 
-Headers:
+Headers:  
 {
   "Authorization": "Bearer your-jwt-token"
 }
 
-Response :
+Response :  
 {
     "message": "succesfully"
 }
 
-### Get Todo Items (Pagination)
-Retrieve a list of todo items with pagination.
+### Get Todo Items (Pagination)  
+Retrieve a list of todo items with pagination.  
 Endpoint : GET /api/todos?page=3&limit=10
 
-Headers:
+Headers:  
 {
   "Authorization": "Bearer your-jwt-token"
 }
 
-Response :
+Response :  
 {
     "data": [
         {
@@ -200,16 +200,16 @@ Response :
     "total": 1
 }
 
-### Filtering  
-Retrieve specific todo items based on a column value
+### Filtering    
+Retrieve specific todo items based on a column value  
 Endpoint: GET /api/todos?column=description&value=washer
 
-Headers:
+Headers:  
 {
   "Authorization": "Bearer your-jwt-token"
 }
 
-Response :
+Response :  
 {
     "result": [
         {
@@ -220,15 +220,15 @@ Response :
     ]
 }
 
-### Sorting 
-Sort todo items
-Endpoint: GET /api/todos?column=id&sort=desc
-Headers:
+### Sorting   
+Sort todo items  
+Endpoint: GET /api/todos?column=id&sort=desc  
+Headers:  
 {
   "Authorization": "Bearer your-jwt-token"
 }
 
-Response :
+Response :  
  "result": [
         {
             "id": 37,
