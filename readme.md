@@ -223,6 +223,7 @@ Response :
 ### Sorting   
 Sort todo items  
 Endpoint: GET /api/todos?column=id&sort=desc  
+
 Headers:  
 {
   "Authorization": "Bearer your-jwt-token"
